@@ -24,4 +24,9 @@
       <Filter>Resource Files</Filter>
     </Media>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\..\..\OpenCV\opencv\LICENSE.txt" />
+    <Text Include="..\..\..\..\OpenCV\opencv\LICENSE_FFMPEG.txt" />
+    <Text Include="..\..\..\..\OpenCV\opencv\README.md.txt" />
+  </ItemGroup>
 </Project>

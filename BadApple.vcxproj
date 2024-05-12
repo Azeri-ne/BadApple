@@ -137,6 +137,11 @@
   <ItemGroup>
     <Media Include="..\..\..\..\YouTubeDLHelper\youtube-dl-helper\downloaded\video.mp4" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\..\..\OpenCV\opencv\LICENSE.txt" />
+    <Text Include="..\..\..\..\OpenCV\opencv\LICENSE_FFMPEG.txt" />
+    <Text Include="..\..\..\..\OpenCV\opencv\README.md.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
