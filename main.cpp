@@ -30,7 +30,7 @@ void checkForOpenCV()
 
 cv::VideoCapture openVid()
 {
-    std::string filePath{R"(C:\Users\Harold.DESKTOP-UJ6F4M4\Videos\video.mp4)"};
+    std::string filePath{R"(video.mp4)"};
     cv::VideoCapture bapple{filePath};
     if(!bapple.isOpened())
     {
@@ -108,11 +108,11 @@ void populateFrame(cv::Mat &frame, cv::Mat &grayFrame, std::vector<cv::Mat> &tot
 
 void playAscii(std::vector<std::string> &asciiFrames)
 {
-    PlaySound(TEXT(R"(C:\Users\Harold.DESKTOP-UJ6F4M4\Music\bad_apple.wav)"), NULL, SND_FILENAME | SND_ASYNC);
+    PlaySound(TEXT(R"(bad_apple.wav)"), NULL, SND_FILENAME | SND_ASYNC);
     for(int i{0}; i < asciiFrames.size(); i++)
     {
         std::cout << asciiFrames[i] << std::flush;
-        cv::waitKey(29);
+        cv::waitKey(30);
     }
 }
 
