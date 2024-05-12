@@ -6,6 +6,15 @@
 
 #pragma comment(lib, "winmm.lib")
 
+void setConsoleSize()
+{
+    HWND console{GetConsoleWindow()};
+    RECT r{};
+    int aspectRatio{8};
+
+    MoveWindow(console, r.left, r.top, 85 * aspectRatio, 65 * aspectRatio, TRUE);
+}
+
 void checkForOpenCV()
 {
     if(cv::getCPUTickCount == 0)
@@ -61,7 +70,8 @@ char brightness2Ascii(int brightness, std::string asciiCharset)
     return asciiCharset[index];
 }
 
-void populateFrame(cv::Mat &frame, cv::Mat &grayFrame, std::vector<cv::Mat> &totalFrames, std::vector<std::string> &asciiFrames, int completeFrameAmount, int frameIndex, int width, int height, int aspectRatio)
+void populateFrame(cv::Mat &frame, cv::Mat &grayFrame, std::vector<cv::Mat> &totalFrames, std::vector<std::string> &asciiFrames, 
+                   int completeFrameAmount, int frameIndex, int width, int height, int aspectRatio)
 {
     std::cout << "Populating empty frame with strings..." << '\n';
     Sleep(1500);
@@ -108,6 +118,8 @@ void playAscii(std::vector<std::string> &asciiFrames)
 
 int main()
 {
+    setConsoleSize();
+
     checkForOpenCV();
 
     cv::VideoCapture bapple{openVid()};
@@ -129,7 +141,9 @@ int main()
     int completeFrameAmount(totalFrames.size());
     int frameIndex{0};
 
-    populateFrame(frame, grayFrame, totalFrames, asciiFrames, completeFrameAmount, frameIndex, width, height, aspectRatio);
+    populateFrame(frame, grayFrame, totalFrames, asciiFrames,
+                  completeFrameAmount, frameIndex, width, height, 
+                  aspectRatio);
 
     system("pause");
 
